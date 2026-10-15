@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  /* Warm near-blacks */
+  --color-ink-950: #0a0906;
+  --color-ink-900: #100e0a;
+  --color-ink-850: #15120d;
+  --color-ink-800: #1a1712;
+  --color-ink-700: #232019;
+  --color-ink-600: #2e2a21;
+  --color-line: #262218;
+
+  /* Parchment */
+  --color-cream-100: #f2ebda;
+  --color-cream-300: #dcd1b9;
+  --color-cream-500: #a79c84;
+  --color-cream-600: #7c725c;
+
+  /* Candlelight */
+  --color-amber-300: #f3c56a;
+  --color-amber-400: #e2af4b;
+  --color-amber-500: #d9a441;
+  --color-amber-600: #a57a2c;
+  --color-amber-700: #6f5018;
+
+  --font-display: var(--font-fraunces), "Georgia", serif;
+  --font-sans: var(--font-space-grotesk), "Helvetica Neue", sans-serif;
+  --font-mono: var(--font-plex-mono), "Menlo", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink-950);
+  color: var(--color-cream-100);
+  caret-color: var(--color-amber-400);
+}
+
+::selection {
+  background: var(--color-amber-500);
+  color: var(--color-ink-950);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-amber-500);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- scrollbars ---------- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ink-600) transparent;
+}
+*::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--color-ink-600);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cream-600);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---------- cover + shelf ---------- */
+.cover-shadow {
+  box-shadow:
+    inset 0 1px 0 hsla(43 38% 90% / 0.14),
+    inset 3px 0 5px -3px hsla(0 0% 0% / 0.55),
+    0 1px 1px hsla(0 0% 0% / 0.5),
+    0 10px 24px -10px hsla(0 0% 0% / 0.75);
+}
+
+.shelf-plank {
+  height: 3px;
+  background: linear-gradient(
+    to bottom,
+    hsla(43 38% 90% / 0.22),
+    hsla(43 38% 90% / 0.05) 45%,
+    hsla(0 0% 0% / 0.6)
+  );
+  box-shadow: 0 14px 28px -6px hsla(0 0% 0% / 0.55);
+}
+
+.hero-vignette {
+  background:
+    radial-gradient(ellipse 90% 70% at 72% 38%, transparent 0%, hsl(24 20% 4% / 0.55) 62%, hsl(24 24% 3.5% / 0.92) 100%),
+    linear-gradient(to right, var(--color-ink-950) 8%, hsl(24 20% 4% / 0.72) 48%, hsl(24 22% 4% / 0.35) 100%),
+    linear-gradient(to top, var(--color-ink-950) 2%, transparent 34%);
+}
